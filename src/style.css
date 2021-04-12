@@ -9,4 +9,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-
+button, .form-input {
+  width: 20rem;
+}
