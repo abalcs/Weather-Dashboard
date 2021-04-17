@@ -6,11 +6,7 @@ let forecastCity = document.querySelector('#forecast');
 let forecastWeather = document.querySelector('#fiveday-container');
 let pastSearchButtonEl = document.querySelector("#past-search-buttons");
 
-
-console.log(cityInput)
-
 let cities = JSON.parse(localStorage.getItem('cities')) || [];
-
 
 const apikey = 'af21e0e9978bb3a47d8af4f3f7fb7f88';
 let requestURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apikey}`;
@@ -37,10 +33,6 @@ let formSubmitHandler = function(event) {
 let saveSearch = function(){
   localStorage.setItem("cities", JSON.stringify(cities));
 };
-
-
-
-
 // When button clicked, FETCH data from API for the city requested
 
 let getCityWeather = function(city){
@@ -59,8 +51,6 @@ let displayWeather = function(weather, searchCity){
   //clear old content
   currentWeather.textContent= "";  
   searchedCity.textContent=searchCity;
-
-  //console.log(weather);
 
   //create date element
   let currentDate = document.createElement("span")
@@ -160,8 +150,6 @@ let display5Day = function(weather){
       let forecastEl=document.createElement("div");
       forecastEl.classList = "card bg-primary text-light m-2";
 
-      //console.log(dailyForecast)
-
       //create date element
       let forecastDate = document.createElement("h5")
       forecastDate.textContent= moment.unix(dailyForecast.dt).format("MMM D, YYYY");
@@ -196,7 +184,6 @@ let display5Day = function(weather){
       //append to five day container
        forecastWeather.appendChild(forecastEl);
    }
-
 }
 
 let pastSearch = function(){
@@ -209,19 +196,9 @@ for(let i = cities.length - 1; i >= 0; i--) {
   pastSearchEl.setAttribute("data-city",cityName)
   pastSearchEl.setAttribute("type", "button");
   pastSearchEl.addEventListener('click', pastSearchHandler);
-
   pastSearchButtonEl.append(pastSearchEl);
+ }
 }
-
-
-getCityWeather(cities[cities.length-1]);
-get5Day(cities[cities.length-1]);
-
-   // console.log(pastSearch)
-
-  
-}
-
 
 let pastSearchHandler = function(event){
    let city = event.target.getAttribute("data-city")
@@ -230,19 +207,7 @@ let pastSearchHandler = function(event){
        get5Day(city);
    }
 }
-
 pastSearch();
-
+getCityWeather(cities[cities.length-1]);
+get5Day(cities[cities.length-1]);
 cityForm.addEventListener("submit", formSubmitHandler);
-pastSearchButtonEl.addEventListener("click", pastSearchHandler);
-
-// API data to be displayed in current weather container w/ city name, date, icon representing conditions, temp, humidity, wind speed, and UV index w/ color indicator
-
-// API data to be displayed in 5-day forecast area that shows date, icon representation of conditions, temp, wind, humidity
-
-// Clicking a city in the search history should bring up weather report again for that city.
-
-//Event listener for button click
-// searchBtn = addEventListener('click', function(event) { 
-//   event.preventDefault();
-// })
