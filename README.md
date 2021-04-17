@@ -3,7 +3,7 @@
 ![Weather Dashboard Image](src/img/weatherdash.png)
 
 
-Link to live website: (https://https://abalcs.github.io/Day-Planner/)
+Link to live website: (https://https://abalcs.github.io/Weather-Dashboard/)
 
 ## Instructions
 Use the search function for any city in the world and get the current local forecast along with the 5-day forecast for that city.  
