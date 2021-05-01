@@ -6,7 +6,7 @@
 Link to live website: (https://abalcs.github.io/Weather-Dashboard/)
 
 ## Tech Used
-HTML, CSS, JavaScript, 
+HTML, CSS, JavaScript, & OMDB API
 
 ## Instructions
 Use the search function for any city in the world and get the current local forecast along with the 5-day forecast for that city.  
