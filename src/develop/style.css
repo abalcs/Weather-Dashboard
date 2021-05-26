@@ -1,0 +1,23 @@
+/*GENERAL STYLES*/
+
+*, ::before, ::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+button, .form-input {
+  width: 10rem;
+}
+
+@media screen and (max-width: 600px) {
+  #fiveday-container { 
+    flex-direction: column;
+  }
+  #city-search-form {
+    text-align: center;
+  }
+}
