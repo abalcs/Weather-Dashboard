@@ -29,3 +29,26 @@ function checkCityEntry() {
     }
 };
 
+function getCoordinates() {
+    let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity},USA&Appid=d788f32e8b9da745fbd42aba6ed8176a&units=imperial`;
+    return fetch(weatherUrl)
+        .then(function (response1) {
+            if (response1.ok) {
+                return response1.json()
+            } else {
+                console.log(response1);
+                throw new Error('Failed to get coordinates')
+            }
+        })
+        .then((data) => {
+            latitude = data.coord.lat;
+            longitude = data.coord.lon;
+            console.log(latitude)
+            console.log(longitude)
+            return {
+                latitude: data.coord.lat,
+                longitude: data.coord.long
+            }
+        })
+}
+
