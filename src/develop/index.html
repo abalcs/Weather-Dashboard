@@ -13,31 +13,88 @@
       <h1>Weather Dashboard: Take 2</h1>
   </header>
   <main class="container-fluid">
-      <div class = "row">
-          <div class="col-12 col-md-3 p-2 search-column">
-              <form class = "border p-2" id ="city-search-form">
-                  <h2>Search for a City:</h2>
-                  <input id="city" type="text" autofocus = "true" placeholder="Boston, MA" class ="form-input"/><br>
-                  <button class = "btn btn-success mt-2" type="submit" id="button">Search</button>
-                  <!-- when this button is clicked it calls the function that takes the input and plugs in into an api call -->
-              </form>
-              <div class = "past-search border" id = "past-search-buttons">
-                <h4 class="p-2">Past Searches</h4>
-              </div>
-          </div>
-          <div class="col-12 col-md-9">
-              <div class = "row border selected-city" id = "current-forecast">
-                  <div class = "col-12">
-                      <h2 id="searched-city"></h2>
-                      <div id = "current-weather-container" class = "list-group"></div>
-                  </div>  
-              </div>
-              <div class = "row border" id = "five-day-forecast">
-                      <h2 class= "col-12" id = "forecast"></h2>
-                      <div class = "d-flex" id = "fiveday-container"></div>
-              </div>  
-          </div>
-      </div>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="form-group">
+                <label for="searchInput">Search for a City:</label>
+                <input type="search" class="form-control" id="searchInput">
+                <div class="d-grid gap-2 my-3">
+                    <button type="button" class="btn btn-primary" id="searchButton">Search</button>
+                </div>
+            </div>
+            <hr>
+            <ul class="list-group"></ul>
+        </div>
+
+        <div class="col-md-10">
+            <div class="mx-4 my-4">
+                <div class="card currentCard py-1">
+                    <h5 class="card-title mt-2 text-center" id="currentCity">Current Forecast:</h5>
+                    <div id="current" class="d-flex flex-row">
+                        <div class="card border-primary mb-3 mx-1 crdCurrent">
+                            <div class="card-body text-primary">
+                                <h2 id="currentTitle" class="card-title">Sun</h2>
+                                <img id="currentIcon" class="mx-auto" src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" />
+                                <p id="currentTemp" class="card-text p-md">Temp:</p>
+                                <p id="currentDesc" class="card-text p-md">Conditions:</p>
+                                <p id="currentWind" class="card-text p-md">Wind Speed:</p>
+                                <p id="currentHumidity" class="card-text p-md">Humidity:</p>
+                                <p id="currentUvi" class="card-text p-md">UV Index:</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <div class="row"></div>
+                <div class="card pb-5 fiveDayCard pl-5">
+                    <h5 class="card-title mt-2 mr-5" id="weatherTitle">5-Day Forecast</h5>
+                    <div id="weekly" class="d-flex flex-row">
+                        <div class="card border-primary mb-3 mx-1 crdWeekly">
+                            <div class="card-body text-primary">
+                                <h5 id="day1Title" class="card-title">Sunday</h5>
+                                <img id="day1Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
+                                <p id="day1Desc" class="card-text">Hi Lo Temp</p>
+                            </div>
+                        </div>
+
+                        <div class="card border-primary mb-3 mx-1 crdWeekly">
+                            <div class="card-body text-primary">
+                                <h5 id="day2Title" class="card-title">Monday</h5>
+                                <img id="day2Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
+                                <p id="day2Desc" class="card-text"> Hi Lo Temp</p>
+                            </div>
+                        </div>
+
+                        <div class="card border-primary mb-3 mx-1 crdWeekly">
+                            <div class="card-body text-primary">
+                                <h5 id="day3Title" class="card-title">Tuesday</h5>
+                                <img id="day3Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
+                                <p id="day3Desc" class="card-text"> Hi Lo Temp</p>
+                            </div>
+                        </div>
+
+                        <div class="card border-primary mb-3 mx-1 crdWeekly">
+                            <div class="card-body text-primary">
+                                <h5 id="day4Title" class="card-title">Wednesday</h5>
+                                <img id="day4Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
+                                <p id="day4Desc" class="card-text"> Hi Lo Temp</p>
+                            </div>
+                        </div>
+
+                        <div class="card border-primary mb-3 mx-1 crdWeekly">
+                            <div class="card-body text-primary">
+                                <h5 id="day5Title" class="card-title">Thursday</h5>
+                                <img id="day5Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
+                                <p id="day5Desc" class="card-text"> Hi Lo Temp</p>
+                            </div>
+                        </div>                           
+                    </div>
+
+                </div>
+            </div>
+        </div>
   </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>

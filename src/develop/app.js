@@ -85,12 +85,6 @@ let getWeather = () => {
 } 
 
 
-// save data to local storage
-let localStorage = () => {
-    // THEN I am presented with current and future conditions for that city and that city is added to the search history
-}
-
-
 // step 4: append data from getWeather
 let displayWeather = (weatherData) => {
     // <div class="bootstrap-card">
@@ -102,13 +96,9 @@ let displayWeather = (weatherData) => {
 
     
     //step 4.1 : assemble the details inside the card first
-    let card_city_name = document.createElement("h2");
-    card_city_name = weatherData.city;
-
-
-
-
-
+    
+    // let card_city_name = 
+    // card_city_name = weatherData.city;
 
     
     // step4.2 append the card details to the actual card
@@ -119,9 +109,11 @@ let displayWeather = (weatherData) => {
     //step4.3 LAST append the card to the container in HTML
     let $currentWeather = document.getElementById("current-weather-container");
     $currentWeather.append(card)
-
 }
 
 // use local storage for this part
 // I am again presented with current and future conditions for that city
-
+// save data to local storage
+let localStorage = () => {
+    // THEN I am presented with current and future conditions for that city and that city is added to the search history
+}
