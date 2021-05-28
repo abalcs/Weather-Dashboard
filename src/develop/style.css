@@ -16,12 +16,17 @@ button, .form-input {
 
 @media screen and (max-width: 600px) {
   
- 
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center !important;
+  }
 
-  .card-body {
+  #currentCard {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
+    justify-content: center !important;
   }
   
   #weekly { 
@@ -29,8 +34,5 @@ button, .form-input {
     flex-direction: column !important;
     text-align: center;
   }
-
-  #city-search-form {
-    text-align: center !important;
-  }
 }
+
