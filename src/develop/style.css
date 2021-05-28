@@ -13,11 +13,24 @@ button, .form-input {
   width: 10rem;
 }
 
+
 @media screen and (max-width: 600px) {
-  #fiveday-container { 
-    flex-direction: column;
+  
+ 
+
+  .card-body {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
-  #city-search-form {
+  
+  #weekly { 
+    display: flex !important;
+    flex-direction: column !important;
     text-align: center;
+  }
+
+  #city-search-form {
+    text-align: center !important;
   }
 }

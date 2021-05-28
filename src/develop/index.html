@@ -19,7 +19,7 @@
                 <label for="searchInput">Search for a City:</label>
                 <input type="search" class="form-control" id="searchInput">
                 <div class="d-grid gap-2 my-3">
-                    <button type="button" class="btn btn-primary" id="searchButton">Search</button>
+                    <button type="button" class="btn btn-success" id="searchButton">Search</button>
                 </div>
             </div>
             <hr>
@@ -31,8 +31,8 @@
                 <div class="card currentCard py-1">
                     <h5 class="card-title mt-2 text-center" id="currentCity">Current Forecast:</h5>
                     <div id="current" class="d-flex flex-row">
-                        <div class="card border-primary mb-3 mx-1 crdCurrent">
-                            <div class="card-body text-primary">
+                        <div class="card text-white bg-primary mb-3 mx-1 crdCurrent" id="crdCurrent">
+                            <div class="card-body">
                                 <h2 id="currentTitle" class="card-title">Sun</h2>
                                 <img id="currentIcon" class="mx-auto" src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" />
                                 <p id="currentTemp" class="card-text p-md">Temp:</p>
@@ -51,40 +51,40 @@
                 <div class="card pb-5 fiveDayCard pl-5">
                     <h5 class="card-title mt-2 mr-5" id="weatherTitle">5-Day Forecast</h5>
                     <div id="weekly" class="d-flex flex-row">
-                        <div class="card border-primary mb-3 mx-1 crdWeekly">
-                            <div class="card-body text-primary">
+                        <div class="card bg-primary mb-3 mx-1 crdWeekly">
+                            <div class="card-body text-white">
                                 <h5 id="day1Title" class="card-title">Sunday</h5>
                                 <img id="day1Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
                                 <p id="day1Desc" class="card-text">Hi Lo Temp</p>
                             </div>
                         </div>
 
-                        <div class="card border-primary mb-3 mx-1 crdWeekly">
-                            <div class="card-body text-primary">
+                        <div class="card bg-primary mb-3 mx-1 crdWeekly">
+                            <div class="card-body text-white">
                                 <h5 id="day2Title" class="card-title">Monday</h5>
                                 <img id="day2Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
                                 <p id="day2Desc" class="card-text"> Hi Lo Temp</p>
                             </div>
                         </div>
 
-                        <div class="card border-primary mb-3 mx-1 crdWeekly">
-                            <div class="card-body text-primary">
+                        <div class="card bg-primary mb-3 mx-1 crdWeekly">
+                            <div class="card-body text-white">
                                 <h5 id="day3Title" class="card-title">Tuesday</h5>
                                 <img id="day3Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
                                 <p id="day3Desc" class="card-text"> Hi Lo Temp</p>
                             </div>
                         </div>
 
-                        <div class="card border-primary mb-3 mx-1 crdWeekly">
-                            <div class="card-body text-primary">
+                        <div class="card bg-primary mb-3 mx-1 crdWeekly">
+                            <div class="card-body text-white">
                                 <h5 id="day4Title" class="card-title">Wednesday</h5>
                                 <img id="day4Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
                                 <p id="day4Desc" class="card-text"> Hi Lo Temp</p>
                             </div>
                         </div>
 
-                        <div class="card border-primary mb-3 mx-1 crdWeekly">
-                            <div class="card-body text-primary">
+                        <div class="card bg-primary mb-3 mx-1 crdWeekly">
+                            <div class="card-body text-white">
                                 <h5 id="day5Title" class="card-title">Thursday</h5>
                                 <img id="day5Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
                                 <p id="day5Desc" class="card-text"> Hi Lo Temp</p>
