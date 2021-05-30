@@ -18,4 +18,4 @@ To provide the user with access to real time and future weather data so that the
 Enter the city in the search bar, hit search, viola!  Instant weather information.    
 
 ## Issues
-None.  Please share if you find errors.
+UV index color logic works except for when recalling a city from the recent search history.  It's an issue with how it's set/retrieved from local storage.

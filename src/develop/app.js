@@ -13,17 +13,15 @@ function checkCityEntry() {
 
     if (city == "") {
         alert('No city? No weather!')
-
     } else {
         //Converts the input to uppercase, runs getOneCall function, then stores in ls
         if (city.includes(",")) {
             cityChoice = city.toUpperCase();
+
             getCoordinates()
                 .then(() => getOneCall())
-                
                 .catch(() => alert('failed to load weather'))
             storeCity();
-
         } else {
             alert('Please include a two-letter US State code.');
         }
@@ -38,7 +36,6 @@ function getCoordinates() {
             if (response1.ok) {
                 return response1.json()
             } else {
-                console.log(response1);
                 throw new Error('Failed to get coordinates')
             }
         })
@@ -46,8 +43,6 @@ function getCoordinates() {
         .then((data) => {
             latitude = data.coord.lat;
             longitude = data.coord.lon;
-            console.log(latitude)
-            console.log(longitude)
             return {
                 latitude: data.coord.lat,
                 longitude: data.coord.long
@@ -92,19 +87,18 @@ function getOneCall(input) {
                     curHumidCard.text(`Humidity: ${data.current.humidity}%`)
                     
                     //Setting UV to display color coding based on conditions
-                    if (parseInt(data.current.uvi) <= 3) {
+                    const uvi = parseInt(data.current.uvi);
+                    if (uvi <=3) {
                         $("#currentUvi").addClass("uviGood")
-                    } else if (parseInt(data.current.uvi) > 3 ) {
+                    } else if (uvi >3 && uvi < 6) {
                         $("#currentUvi").addClass("uviModerate")
-                    } else if (parseInt(data.current.uvi) > 6 ) {
+                    } else if (uvi >= 6 && uvi <8 ) {
                         $("#currentUvi").addClass("uviBad")
                     } else {
                         $("#currentUvi").addClass("uviExtreme")
-                    }
-                })
-            } else {
-                console.log(response);
-            }
+                    } 
+                }) 
+            } 
         })
 };
 

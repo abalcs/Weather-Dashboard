@@ -13,6 +13,15 @@ button, .form-input {
   width: 10rem;
 }
 
+button {
+  color: white;
+  background-color: #198754;
+  border-radius: 5px !important;
+  margin: 3px !important;
+  border: none;
+  box-shadow: 2px 2px 5px 3px grey;
+}
+
 .uviGood {
   background-color: green;
   color: white;
