@@ -1,6 +1,6 @@
 # Weather-Dashboard
 
-![Weather Dashboard Image](src/img/weatherdash.png)
+![Weather Dashboard Image](develop/img/weather.png)
 
 
 Link to live website: (https://abalcs.github.io/Weather-Dashboard/)
