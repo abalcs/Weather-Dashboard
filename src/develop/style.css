@@ -13,6 +13,27 @@ button, .form-input {
   width: 10rem;
 }
 
+.uviGood {
+  background-color: green;
+  color: white;
+}
+
+.uviModerate {
+  background-color: yellow;
+  color: black;
+}
+
+.uviBad {
+  background-color: red;
+  color: white;
+}
+
+.uviExtreme {
+  background-color: blueviolet;
+  color: white;
+}
+
+
 
 @media screen and (max-width: 600px) {
   
