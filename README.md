@@ -3,7 +3,7 @@
 ![Weather Dashboard Image](develop/img/weather.png)
 
 
-Link to live website: [https://abalcs.github.io/Weather-Dashboard/];
+Link to live website: https://abalcs.github.io/Weather-Dashboard/
 
 ## Tech Used
 HTML, CSS, JavaScript, & OMDB API
