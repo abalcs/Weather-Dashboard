@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato 700', sans-serif !important;
 }
 
 button, .form-input {
@@ -20,6 +20,16 @@ button {
   margin: 3px !important;
   border: none;
   box-shadow: 2px 2px 5px 3px grey;
+}
+
+button:hover {
+  background-color: #135e38;
+}
+
+div.card-body {
+  box-shadow: 2px 2px 5px 3px grey;
+  border: 2px solid orange;
+  border-radius: 5px;
 }
 
 .uviGood {
