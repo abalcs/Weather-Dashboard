@@ -3,101 +3,192 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="develop/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <title>Weather Dashboard</title>
 </head>
-<body>
-  <header class = "bg-dark text-white text-center p-2">
-      <h1>Weather Dashboard: Take 2</h1>
-  </header>
-  <main class="container-fluid">
-    <div class="row">
-        <div class="col-md-2">
-            <div class="form-group">
-                <label for="searchInput">Search for a City:</label>
-                <input type="search" class="form-control" id="searchInput">
-                <div class="d-grid gap-2 my-3">
-                    <button type="button" class="btn btn-success" id="searchButton">Search</button>
-                </div>
-            </div>
-            <hr>
-            <ul class="list-group"></ul>
+<body class="weather-clear day">
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-cloud-sun"></i>
+          <h1>Weather Dashboard</h1>
+        </div>
+        <div class="header-controls">
+          <button class="unit-toggle" id="unitToggle" title="Toggle temperature unit">
+            <span class="unit-f active">°F</span>
+            <span class="unit-c">°C</span>
+          </button>
+          <button class="location-btn" id="geolocateBtn" title="Use my location">
+            <i class="fas fa-location-crosshairs"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="search-container">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search city..." autocomplete="off">
+            <button id="searchButton" class="search-btn">
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+          <p class="search-hint">Enter city name (e.g., "New York" or "London, UK")</p>
         </div>
 
-        <div class="col-md-10">
-            <div class="mx-4 my-4">
-                <div class="card currentCard py-1" id="currentCard">
-                    <h5 class="card-title mt-2 text-center" id="currentCity">Current Forecast:</h5>
-                    <div id="current" class="d-flex flex-row justify-content-center">
-                        <div class="card text-white bg-primary mb-3 mx-1 crdCurrent" id="crdCurrent">
-                            <div class="card-body">
-                                <h2 id="currentTitle" class="card-title">Sun</h2>
-                                <img id="currentIcon" class="mx-auto" src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" />
-                                <p id="currentTemp" class="card-text p-md">Temp:</p>
-                                <p id="currentDesc" class="card-text p-md">Conditions:</p>
-                                <p id="currentWind" class="card-text p-md">Wind Speed:</p>
-                                <p id="currentHumidity" class="card-text p-md">Humidity:</p>
-                                <p id="currentUvi" class="card-text p-md">UV Index:</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-4">
-                <div class="row"></div>
-                <div class="card pb-5 fiveDayCard pl-5">
-                    <h5 class="card-title text-center mt-2 mr-5" id="weatherTitle">5-Day Forecast</h5>
-                    <div id="weekly" class="d-flex flex-row justify-content-center">
-                        <div class="card bg-primary mb-3 mx-1 crdWeekly">
-                            <div class="card-body text-white">
-                                <h5 id="day1Title" class="card-title"></h5>
-                                <img id="day1Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
-                                <p id="day1Desc" class="card-text">Hi Lo Temp</p>
-                            </div>
-                        </div>
-
-                        <div class="card bg-primary mb-3 mx-1 crdWeekly">
-                            <div class="card-body text-white">
-                                <h5 id="day2Title" class="card-title"></h5>
-                                <img id="day2Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
-                                <p id="day2Desc" class="card-text"> Hi Lo Temp</p>
-                            </div>
-                        </div>
-
-                        <div class="card bg-primary mb-3 mx-1 crdWeekly">
-                            <div class="card-body text-white">
-                                <h5 id="day3Title" class="card-title"></h5>
-                                <img id="day3Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
-                                <p id="day3Desc" class="card-text"> Hi Lo Temp</p>
-                            </div>
-                        </div>
-
-                        <div class="card bg-primary mb-3 mx-1 crdWeekly">
-                            <div class="card-body text-white">
-                                <h5 id="day4Title" class="card-title"></h5>
-                                <img id="day4Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
-                                <p id="day4Desc" class="card-text"> Hi Lo Temp</p>
-                            </div>
-                        </div>
-
-                        <div class="card bg-primary mb-3 mx-1 crdWeekly">
-                            <div class="card-body text-white">
-                                <h5 id="day5Title" class="card-title"></h5>
-                                <img id="day5Icon" src="http://openweathermap.org/img/wn/10d.png" alt="Weather Icon" />
-                                <p id="day5Desc" class="card-text"> Hi Lo Temp</p>
-                            </div>
-                        </div>                           
-                    </div>
-
-                </div>
-            </div>
+        <div class="recent-searches">
+          <h3><i class="fas fa-history"></i> Recent Searches</h3>
+          <ul class="search-history" id="searchHistory"></ul>
         </div>
-  </main>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"></script>
+      </aside>
+
+      <!-- Main Weather Display -->
+      <section class="weather-display">
+        <!-- Loading State -->
+        <div class="loading-state" id="loadingState">
+          <div class="loader"></div>
+          <p>Fetching weather data...</p>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState">
+          <i class="fas fa-cloud-sun-rain"></i>
+          <h2>Welcome to Weather Dashboard</h2>
+          <p>Search for a city or use your location to get started</p>
+        </div>
+
+        <!-- Weather Content -->
+        <div class="weather-content" id="weatherContent">
+          <!-- Current Weather Card -->
+          <div class="current-weather-card" id="currentWeatherCard">
+            <div class="current-main">
+              <div class="current-location">
+                <h2 id="cityName">--</h2>
+                <p id="currentDate">--</p>
+              </div>
+              <div class="current-temp-display">
+                <div class="weather-icon-large" id="currentWeatherIcon">
+                  <i class="fas fa-sun"></i>
+                </div>
+                <div class="temp-info">
+                  <span class="current-temp" id="currentTemp">--</span>
+                  <span class="temp-unit">°F</span>
+                </div>
+              </div>
+              <p class="weather-description" id="weatherDescription">--</p>
+            </div>
+
+            <div class="current-details">
+              <div class="detail-item">
+                <i class="fas fa-temperature-half"></i>
+                <div>
+                  <span class="detail-label">Feels Like</span>
+                  <span class="detail-value" id="feelsLike">--°</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-droplet"></i>
+                <div>
+                  <span class="detail-label">Humidity</span>
+                  <span class="detail-value" id="humidity">--%</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-wind"></i>
+                <div>
+                  <span class="detail-label">Wind</span>
+                  <span class="detail-value" id="windSpeed">-- mph</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-gauge-high"></i>
+                <div>
+                  <span class="detail-label">Pressure</span>
+                  <span class="detail-value" id="pressure">-- hPa</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fas fa-eye"></i>
+                <div>
+                  <span class="detail-label">Visibility</span>
+                  <span class="detail-value" id="visibility">-- mi</span>
+                </div>
+              </div>
+              <div class="detail-item uv-item" id="uvItem">
+                <i class="fas fa-sun"></i>
+                <div>
+                  <span class="detail-label">UV Index</span>
+                  <span class="detail-value uv-badge" id="uvIndex">--</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="sun-times">
+              <div class="sun-item">
+                <i class="fas fa-sunrise"></i>
+                <div>
+                  <span class="sun-label">Sunrise</span>
+                  <span class="sun-value" id="sunrise">--:--</span>
+                </div>
+              </div>
+              <div class="sun-progress">
+                <div class="sun-track">
+                  <div class="sun-position" id="sunPosition"></div>
+                </div>
+              </div>
+              <div class="sun-item">
+                <i class="fas fa-sunset"></i>
+                <div>
+                  <span class="sun-label">Sunset</span>
+                  <span class="sun-value" id="sunset">--:--</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hourly Forecast -->
+          <div class="forecast-section hourly-section">
+            <h3><i class="fas fa-clock"></i> Hourly Forecast</h3>
+            <div class="hourly-scroll">
+              <div class="hourly-container" id="hourlyForecast">
+                <!-- Hourly items will be inserted here -->
+              </div>
+            </div>
+          </div>
+
+          <!-- 5-Day Forecast -->
+          <div class="forecast-section daily-section">
+            <h3><i class="fas fa-calendar-week"></i> 5-Day Forecast</h3>
+            <div class="daily-container" id="dailyForecast">
+              <!-- Daily items will be inserted here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Error State -->
+        <div class="error-state" id="errorState">
+          <i class="fas fa-exclamation-triangle"></i>
+          <h2>Oops! Something went wrong</h2>
+          <p id="errorMessage">Unable to fetch weather data. Please try again.</p>
+          <button class="retry-btn" id="retryBtn">
+            <i class="fas fa-redo"></i> Try Again
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></p>
+    </footer>
+  </div>
+
   <script src="develop/app.js"></script>
 </body>
 </html>
